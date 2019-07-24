@@ -1,45 +1,159 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///Users/sarahcullen/code/dad-jokes.html -->
-<html lang="en-us">
+<html lang="en">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Bad/good jokes -- scwebd.github.io</title>
 
-</head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<body>
-	<h1>Dad jokes, anybody?!!</h1>
+    <title>Jeff Andony's Portfolio</title>
 
-	<p>I used to have a job at a calendar factory but I got the sack because I took a couple of days off.</p>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="assets/css/materialize.css">
 
-	<p>How do you make holy water? You boil the hell out of it.</p>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-	<p>Why can't you hear a pterodactyl go to the bathroom? Because the pee is silent.</p>
+    <!-- Bootstrap core CSS -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-	<p>A woman is on trial for beating her husband to death with his guitar collection. Judge says, 'First offender?' She says, 'No, first a Gibson! Then a Fender!</p>
+    <!-- Custom styles for this template -->
+    <link href="assets/css/modern-business.css" rel="stylesheet">
+    <link href="assets/css/cover.css" rel="stylesheet">
+    <link href="assets/style.css" rel="stylesheet">
 
-	<p>What is Beethoven's favorite fruit? A ba-na-na-na.</p>
+    <!-- Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/58850a792a.js"></script>
 
-    <p>What's Forrest Gump's password? 1forrest1</p>
-    
-    <p>I'd like to give a big shout out to the sidewalks... they've really kept me off the streets.</p>
+    <!-- Firebase References -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-auth.js"></script>
 
-	<p>Want to hear a joke about a piece of paper? Never mind... it's tearable.</p>
+    <!-- Nav Menu -->
 
-	<p>I bought some shoes from a drug dealer. I don't know what he laced them with, but I was tripping all day!</p>
+<body style="background-color: #385273;">
+    <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
+        <header class="masthead">
+            <div class="inner">
+                <nav class="nav nav-masthead justify-content-center float-none">
+                    <a id="welcome" class="nav-link mx-auto active" href="#">Welcome</a>
+                    <a class="signin nav-link mx-auto" href="#">Sign In</a>
+                    <a id="signup" class="nav-link mx-auto" href="#">Sign Up</a>
+                </nav>
+            </div>
+        </header>
 
-	<p>A termite walks into a bar and asks, "Is the bar tender here?</p>
+        <!-- Welcome Page -->
+        <main id="welcome-page" role="main" class="inner cover text-center">
+            <h1 class="cover-heading bg-dark rounded text-center p-5">Welcome!</h1>
+            <div class="mt-5">
+                <p class="lead">Sign in to access awesome portfolio work. <br>Don't have one? Don't worry!</p>
+                <hr class="bg-white">
+                <p><strong><i class="fas fa-user-circle"></i> Example Email: </strong>johnsmith@email.com</p>
+                <p><strong><i class="fas fa-lock"></i> Example Password: </strong>password</p>
+            </div>
+            <a href="resume.html" target="_blank"
+                class="light-blue white-text waves-effect waves-dark btn-large text-decoration-none hoverable mt-4">Enter
+                Site</a>
+            <a href="#"
+                class="signin light-blue white-text waves-effect waves-dark btn-large text-decoration-none hoverable mt-4 pulse">Sign
+                In</a>
 
-	<p>Did you hear about the circus fire? It was in tents!</p>
+        </main>
 
-    <p>Can February March? No, but April May!</p>
-    
-    <p>What's a sea monster's favorite snack? Ships and dip!</p>
+        <!-- Sign In Page -->
+        <section id="signin-page" class="inner cover">
+            <h2 class="cover-heading bg-dark rounded text-center p-5">Sign In</h2>
+            <div class="mt-5 text-center">
+                <p><strong><i class="fas fa-user-circle"></i> Example Email: </strong>johnsmith@email.com</p>
+                <p><strong><i class="fas fa-lock"></i> Example Password: </strong>password</p>
+                <hr class="bg-white">
+            </div>
 
-	<p>Have you heard of the band 1023 MB? ...they haven't got a gig yet.</p>
-	
-	<p>What do you call bears with no teeth? Gummy bears!</p>
+            <div class="row mt-5">
+                <form class="col-sm-12 p-0">
+                    <div class="row">
+                        <div class="input-field col-sm-12">
+                            <i class="fas fa-user-circle prefix"></i>
+                            <input id="email" type="email" class="validate white-text"
+                                placeholder="johnsmith@email.com">
+                            <label class="white-text" for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col-sm-12">
+                            <i class="fas fa-lock prefix"></i>
+                            <input id="password" type="password" class="validate white-text">
+                            <label class="white-text" for="password">Password</label>
+                        </div>
+                    </div>
+                    <div id="signedin-message" class="text-white text-center mb-3">You successfully signed in! Yay!
+                    </div>
+                    <a id="signin-button"
+                        class="signin light-blue white-text waves-effect waves-dark btn-large text-decoration-none hoverable"
+                        type="submit">Sign In</a>
+                    <a id="signout-button"
+                        class="light-blue white-text waves-effect waves-dark btn-large text-decoration-none hoverable"
+                        type="submit">Sign Out</a>
+
+                </form>
+            </div>
+
+        </section>
+
+        <!-- Sign Up Page -->
+        <section id="signup-page" class="inner cover">
+            <h2 class="cover-heading bg-dark rounded text-center p-5">Sign Up</h2>
+
+            <div class="row mt-5">
+                <form class="col-sm-12 p-0">
+                    <div class="row">
+                        <div class="input-field col-sm-6">
+                            <input placeholder="Your name ..." id="firstname-input" type="text"
+                                class="validate white-text">
+                            <label class="white-text" for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col-sm-6">
+                            <input id="lastname-input" type="text" class="validate white-text">
+                            <label class="white-text" for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col-sm-12">
+                            <input id="email-input" type="email" class="validate white-text">
+                            <label class="white-text" for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col-sm-12">
+                            <input id="password-input" type="password" class="validate white-text">
+                            <label class="white-text" for="password">Password</label>
+                        </div>
+                    </div>
+                    <a id="signup-button"
+                        class="light-blue white-text waves-effect waves-dark btn-large text-decoration-none hoverable"
+                        type="submit">Register!</a>
+                </form>
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="mastfoot mt-auto text-center text-white">
+            <div class="inner">
+                <p class="my-5">Online Portfolio & Resume for Jeff Andony.
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/portfolio.js"></script>
+
 </body>
 
 </html>
